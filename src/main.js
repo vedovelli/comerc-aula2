@@ -2,13 +2,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import http from '@p/http'
-import eventBus from '@p/event-bus'
+import plugins from '@p'
 
 Vue.config.productionTip = false
 
-Vue.use(http)
-Vue.use(eventBus)
+Vue.use(plugins)
 
 /* eslint-disable no-new */
 new Vue({
