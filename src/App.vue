@@ -1,23 +1,33 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <router-link class="navbar-brand" :to="{ name: 'dashboard.index' }">Comerc</router-link>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <!--https://router.vuejs.org/api/#applying-active-class-to-outer-element-->
+            <router-link tag="li" :to="{ name: 'products.index' }"><a>Produtos</a></router-link>
+            <router-link tag="li" :to="{ name: 'categories.index' }"><a>Categorias</a></router-link>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <router-view/>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'Comerc'
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  body {
+    margin-top: 70px;
+  }
 </style>
