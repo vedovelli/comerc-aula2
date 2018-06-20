@@ -6,5 +6,5 @@ export const http = axios.create({
 })
 
 export function setToken (token) {
-  http.defaults.headers.common.Authorization = `Bearer ${token}`
+  http.defaults.headers.common['x-access-token'] = token
 }
