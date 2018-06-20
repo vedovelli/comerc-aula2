@@ -1,15 +1,18 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+
+import AuthenticationRoutes from '@f/authentication/routes'
+import DashboardRoutes from '@f/dashboard/routes'
+import ProductsRoutes from '@f/products/routes'
+import CategoriesRoutes from '@f/categories/routes'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
+    ...AuthenticationRoutes,
+    ...DashboardRoutes,
+    ...ProductsRoutes,
+    ...CategoriesRoutes
   ]
 })

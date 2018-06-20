@@ -10,5 +10,5 @@ module.exports = {
   '@c': resolve('src/components'),
   '@p': resolve('src/plugins'),
   '@m': resolve('src/mixins'),
-  '@util': resolve('src/util')
+  '@f': resolve('src/features')
 }

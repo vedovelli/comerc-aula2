@@ -3,8 +3,8 @@ import Main from './Main'
 
 export default [
   {
-    path: '/categorias'
-    name: 'categories.index',
+    path: '/produtos',
+    name: 'products.index',
     component: Main
   }
 ]
