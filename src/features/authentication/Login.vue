@@ -15,7 +15,7 @@ export default {}
           <input type="email" class="form-control">
         </div>
         <div class="form-group">
-          <div class="control-label">Password</div>
+          <div class="control-label">Senha</div>
           <input type="password" class="form-control">
         </div>
         <button class="btn btn-block btn-primary">Acessar</button>
@@ -27,12 +27,4 @@ export default {}
   </div>
 </template>
 
-<style>
-  .panel-login {
-    width: 400px;
-    margin: 0 auto;
-  }
-  .password-link {
-    margin-top: 15px;
-  }
-</style>
+<style src="./styles.css"></style>
