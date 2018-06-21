@@ -8,8 +8,8 @@ export default [
     name: 'products.index',
     component: Main,
     children: [{
-      path: 'criar',
-      name: 'products.new',
+      path: 'form/:id?',
+      name: 'products.form',
       component: Form
     }]
   }

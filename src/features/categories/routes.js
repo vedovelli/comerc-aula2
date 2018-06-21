@@ -9,8 +9,8 @@ export default [
     component: Main,
     children: [
       {
-        path: 'criar',
-        name: 'categories.new',
+        path: 'form/:id?',
+        name: 'categories.form',
         component: Form
       }
     ]

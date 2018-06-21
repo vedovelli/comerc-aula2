@@ -1,24 +1,13 @@
 
 <script>
-  export default {
-    props: {
-      produto: {
-        type: Object,
-        default: {
-          id: '',
-          name: '',
-          category: ''
-        }
-      }
-    }
-  }
+export default {}
 </script>
 
 <template>
   <form action="#" class="well">
     <div class="form-group">
       <div class="control-label">Nome do Produto</div>
-      <input type="text" class="form-control" v-model="produto.name">
+      <input type="text" class="form-control">
     </div>
     <div class="row">
       <div class="col-md-6">

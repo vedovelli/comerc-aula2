@@ -11,7 +11,7 @@ export default {
       <div class="row">
         <div class="col-md-6">Categorias</div>
         <div class="col-md-6 text-right">
-          <router-link class="btn btn-primary btn-xs" :to="{ name: 'categories.new' }">Nova Categoria</router-link>
+          <router-link class="btn btn-primary btn-xs" :to="{ name: 'categories.form' }">Nova Categoria</router-link>
         </div>
       </div>
     </h1>
@@ -29,7 +29,7 @@ export default {
           <td width="75" class="text-center">100</td>
           <td>Nome da Categoria</td>
           <td width="150" class="text-center">
-            [ <a href="#">editar</a> ]
+            [ <router-link :to="{ name: 'categories.form', params: { id: 100 } }">editar</router-link> ]
             [ <a href="#">excluir</a> ]
           </td>
         </tr>
