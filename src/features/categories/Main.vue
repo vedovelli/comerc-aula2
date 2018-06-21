@@ -5,6 +5,38 @@ export default {}
 
 <template>
   <div>
-    <h1>Categorias</h1>
+    <h1>
+      <div class="row">
+        <div class="col-md-6">Categorias</div>
+        <div class="col-md-6 text-right">
+          <a href="#" class="btn btn-primary btn-xs">Nova Categoria</a>
+        </div>
+      </div>
+    </h1>
+    <table class="table table-bordered table-stripped table-hover">
+      <thead>
+        <tr>
+          <th class="text-center">ID</th>
+          <th>Categoria</th>
+          <th class="text-center">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td width="75" class="text-center">100</td>
+          <td>Nome da Categoria</td>
+          <td width="150" class="text-center">
+            [ <a href="#">editar</a> ]
+            [ <a href="#">excluir</a> ]
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
+
+<style scoped>
+  h1 {
+    margin-bottom: 30px;
+  }
+</style>
