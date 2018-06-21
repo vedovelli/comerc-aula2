@@ -1,7 +1,25 @@
 
 <script>
+import swal from 'sweetalert'
 export default {
-  components: {}
+  methods: {
+    confirm () {
+      swal({
+        title: 'Tem certeza?',
+        icon: 'warning',
+        buttons: {
+          cancel: 'Cancelar',
+          ok: 'Remover'
+        },
+        dangerMode: true,
+      })
+      .then(willDelete => {
+        if (willDelete) {
+          // remover
+        }
+      })
+    }
+  }
 }
 </script>
 
@@ -30,7 +48,7 @@ export default {
           <td>Nome da Categoria</td>
           <td width="150" class="text-center">
             [ <router-link :to="{ name: 'categories.form', params: { id: 100 } }">editar</router-link> ]
-            [ <a href="#">excluir</a> ]
+            [ <a href="#" @click.prevent="confirm">excluir</a> ]
           </td>
         </tr>
       </tbody>
