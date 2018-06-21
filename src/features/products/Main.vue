@@ -5,7 +5,14 @@ export default {}
 
 <template>
   <div>
-    <h1>Produtos</h1>
+    <h1>
+      <div class="row">
+        <div class="col-md-6">Produtos</div>
+        <div class="col-md-6 text-right">
+          <a href="#" class="btn btn-primary btn-xs">Novo Produto</a>
+        </div>
+      </div>
+    </h1>
     <table class="table table-bordered table-stripped table-hover">
       <thead>
         <tr>
@@ -27,3 +34,9 @@ export default {}
     </table>
   </div>
 </template>
+
+<style scoped>
+  h1 {
+    margin-bottom: 30px;
+  }
+</style>
