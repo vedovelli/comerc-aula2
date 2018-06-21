@@ -1,6 +1,7 @@
 
-import Main from './Main'
-import Form from './Form'
+// https://router.vuejs.org/guide/advanced/lazy-loading.html
+const Main = () => import('./Main')
+const Form = () => import('./Form')
 
 export default [
   {
