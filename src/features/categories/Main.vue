@@ -1,6 +1,8 @@
 
 <script>
-export default {}
+export default {
+  components: {}
+}
 </script>
 
 <template>
@@ -9,10 +11,11 @@ export default {}
       <div class="row">
         <div class="col-md-6">Categorias</div>
         <div class="col-md-6 text-right">
-          <a href="#" class="btn btn-primary btn-xs">Nova Categoria</a>
+          <router-link class="btn btn-primary btn-xs" :to="{ name: 'categories.new' }">Nova Categoria</router-link>
         </div>
       </div>
     </h1>
+    <router-view/>
     <table class="table table-bordered table-stripped table-hover">
       <thead>
         <tr>

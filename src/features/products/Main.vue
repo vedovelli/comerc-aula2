@@ -9,10 +9,11 @@ export default {}
       <div class="row">
         <div class="col-md-6">Produtos</div>
         <div class="col-md-6 text-right">
-          <a href="#" class="btn btn-primary btn-xs">Novo Produto</a>
+          <router-link class="btn btn-primary btn-xs" :to="{ name: 'products.new' }">Novo Produto</router-link>
         </div>
       </div>
     </h1>
+    <router-view/>
     <table class="table table-bordered table-stripped table-hover">
       <thead>
         <tr>
