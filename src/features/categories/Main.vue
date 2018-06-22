@@ -11,9 +11,8 @@ export default {
           cancel: 'Cancelar',
           ok: 'Remover'
         },
-        dangerMode: true,
-      })
-      .then(willDelete => {
+        dangerMode: true
+      }).then(willDelete => {
         if (willDelete) {
           // remover
         }
