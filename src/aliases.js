@@ -10,5 +10,6 @@ module.exports = {
   '@c': resolve('src/components'),
   '@p': resolve('src/plugins'),
   '@m': resolve('src/mixins'),
+  '@s': resolve('src/service'),
   '@f': resolve('src/features')
 }

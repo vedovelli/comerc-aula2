@@ -31,4 +31,4 @@ export default {}
   </div>
 </template>
 
-<style src="./styles.css"></style>
+<style scoped src="./styles.css"></style>

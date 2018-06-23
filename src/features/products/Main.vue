@@ -1,9 +1,21 @@
 
 <script>
 import swal from 'sweetalert'
+import chunk from 'lodash/chunk'
 export default {
+  name: 'Products',
+  data () {
+    return {
+      list: []
+    }
+  },
+  mounted () {
+    this.$http.get('/produto').then(res => {
+      this.list = res.data.products
+    })
+  },
   methods: {
-    confirm () {
+    confirm (product) {
       swal({
         title: 'Tem certeza?',
         icon: 'warning',
@@ -17,6 +29,14 @@ export default {
           // remover
         }
       })
+    }
+  },
+  computed: {
+    hasProducts () {
+      return this.list.length > 0
+    },
+    pages () {
+      return chunk(this.list, 30)
     }
   }
 }
@@ -33,7 +53,7 @@ export default {
       </div>
     </h1>
     <router-view/>
-    <table class="table table-bordered table-stripped table-hover">
+    <table v-if="hasProducts" class="table table-bordered table-stripped table-hover">
       <thead>
         <tr>
           <th class="text-center">ID</th>
@@ -42,16 +62,17 @@ export default {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td width="75" class="text-center">100</td>
-          <td>Nome do Produto</td>
+        <tr v-for ="product in pages[0]" :key="product.id">
+          <td width="75" class="text-center">{{ product.id }}</td>
+          <td>{{ product.name }}</td>
           <td width="150" class="text-center">
-            [ <router-link :to="{ name: 'products.form', params: { id: 100 } }">editar</router-link> ]
-            [ <a href="#" @click.prevent="confirm">excluir</a> ]
+            [ <router-link :to="{ name: 'products.form', params: { id: product.id } }">editar</router-link> ]
+            [ <a href="#" @click.prevent="confirm(product)">excluir</a> ]
           </td>
         </tr>
       </tbody>
     </table>
+    <h3 v-else>Não há ainda produtos cadastrados!</h3>
   </div>
 </template>
 
