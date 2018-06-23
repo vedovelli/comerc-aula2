@@ -3,20 +3,21 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import state from './state'
-import actions from './actions'
 import mutations from './mutations'
+import actions from './actions'
 
-import Products from './modules/products'
-import Categories from './modules/categories'
+import products from './modules/products'
+import categories from '@f/categories/vuex'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  strict: true,
   state,
-  actions,
   mutations,
+  actions,
   modules: {
-    Products,
-    Categories
+    products,
+    categories
   }
 })

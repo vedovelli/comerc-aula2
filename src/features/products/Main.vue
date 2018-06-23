@@ -1,34 +1,28 @@
 
 <script>
-import chunk from 'lodash/chunk'
 import notificationMixin from '@m/notifications'
+import { mapState, mapActions, mapGetters } from 'vuex'
 export default {
   name: 'Products',
   mixins: [notificationMixin],
-  data () {
-    return {
-      list: []
-    }
-  },
   mounted () {
-    this.$bus.$on('product-inserted', ({ product }) => {
-      this.list.unshift(product)
-    })
+    // this.$bus.$on('product-inserted', ({ product }) => {
+    //   this.list.unshift(product)
+    // })
+    this.$bus.$on('product-inserted', () => this.fetch())
     this.fetch()
   },
   methods: {
+    ...mapActions('products', ['fetchList']),
     fetch () {
-      this.$http.get('/produto').then(res => {
-        this.list = res.data.products.reverse()
-      })
+      this.fetchList()
     }
   },
   computed: {
+    ...mapState('products', ['list']),
+    ...mapGetters('products', ['pages']),
     hasProducts () {
       return this.list.length > 0
-    },
-    pages () {
-      return chunk(this.list, 30)
     }
   }
 }
