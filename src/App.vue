@@ -1,10 +1,12 @@
 
 <script>
 import ComercTopBar from '@c/top-bar'
+import ComercErrors from '@c/errors'
 export default {
   name: 'Comerc',
   components: {
-    ComercTopBar
+    ComercTopBar,
+    ComercErrors
   }
 }
 </script>
@@ -12,6 +14,7 @@ export default {
 <template>
   <div id="app">
     <comerc-top-bar/>
+    <comerc-errors />
     <div class="container">
       <router-view/>
     </div>

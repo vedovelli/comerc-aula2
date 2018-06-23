@@ -8,3 +8,7 @@ export const setToken = token => {
 export const getToken = () => {
   return local.getItem('token')
 }
+
+export const removeToken = () => {
+  return local.removeItem('token')
+}

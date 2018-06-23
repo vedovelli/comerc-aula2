@@ -1,6 +1,5 @@
 
 <script>
-import swal from 'sweetalert'
 import { setToken } from '@s/local'
 export default {
   data () {
@@ -16,11 +15,8 @@ export default {
         .post('/autenticacao', { email, password })
         .then(res => {
           setToken(res.data.token).then(() => {
+            this.$bus.$emit('logged-in')
             this.$router.push({ name: 'products.index' })
-          })
-        }).catch(res => {
-          swal(res.response.data.error).then(() => {
-            this.$refs.emailField.focus()
           })
         })
     }

@@ -5,6 +5,7 @@ export default [
   {
     path: '/',
     name: 'dashboard.index',
-    component: Main
+    component: Main,
+    meta: { requiresAuth: true }
   }
 ]
