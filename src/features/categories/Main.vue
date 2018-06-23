@@ -1,24 +1,8 @@
 
 <script>
-import swal from 'sweetalert'
+import notificationMixin from '@m/notifications'
 export default {
-  methods: {
-    confirm () {
-      swal({
-        title: 'Tem certeza?',
-        icon: 'warning',
-        buttons: {
-          cancel: 'Cancelar',
-          ok: 'Remover'
-        },
-        dangerMode: true
-      }).then(willDelete => {
-        if (willDelete) {
-          // remover
-        }
-      })
-    }
-  }
+  mixins: [notificationMixin]
 }
 </script>
 

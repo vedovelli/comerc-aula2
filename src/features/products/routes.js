@@ -1,6 +1,6 @@
 
-import Main from './Main'
-import Form from './Form'
+const Main = () => import('./Main')
+const Form = () => import('./Form')
 
 export default [
   {

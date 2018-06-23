@@ -1,5 +1,5 @@
 
-import Main from './Main'
+const Main = () => import('./Main')
 
 export default [
   {

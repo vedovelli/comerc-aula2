@@ -1,33 +1,25 @@
 
 <script>
-import swal from 'sweetalert'
 import chunk from 'lodash/chunk'
+import notificationMixin from '@m/notifications'
 export default {
   name: 'Products',
+  mixins: [notificationMixin],
   data () {
     return {
       list: []
     }
   },
   mounted () {
-    this.$http.get('/produto').then(res => {
-      this.list = res.data.products
+    this.$bus.$on('product-inserted', ({ product }) => {
+      this.list.unshift(product)
     })
+    this.fetch()
   },
   methods: {
-    confirm (product) {
-      swal({
-        title: 'Tem certeza?',
-        icon: 'warning',
-        buttons: {
-          cancel: 'Cancelar',
-          ok: 'Remover'
-        },
-        dangerMode: true
-      }).then(willDelete => {
-        if (willDelete) {
-          // remover
-        }
+    fetch () {
+      this.$http.get('/produto').then(res => {
+        this.list = res.data.products.reverse()
       })
     }
   },
@@ -67,7 +59,7 @@ export default {
           <td>{{ product.name }}</td>
           <td width="150" class="text-center">
             [ <router-link :to="{ name: 'products.form', params: { id: product.id } }">editar</router-link> ]
-            [ <a href="#" @click.prevent="confirm(product)">excluir</a> ]
+            [ <a href="#" @click.prevent="confirm({ message: `Whatever ${product.name}`, route: `/produto/${product.id}` })">excluir</a> ]
           </td>
         </tr>
       </tbody>

@@ -1,7 +1,7 @@
 
-import Login from './Login'
-import Password from './Password'
-import Register from './Register'
+const Login = () => import('./Login')
+const Password = () => import('./Password')
+const Register = () => import('./Register')
 
 export default [
   {
